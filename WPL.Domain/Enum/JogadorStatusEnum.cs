@@ -5,14 +5,14 @@ namespace WPL.Domain
     public enum JogadorStatusEnum
     {
         [Description("Criado")]
-        CRIADO = 1,
+        Criado = 1,
         [Description("Ativo")]
-        ATIVO = 2,
+        Ativo = 2,
         [Description("Inativo")]
-        INATIVO = 3,
+        Inativo = 3,
         [Description("Banido temporariamente")]
-        BANIDOTEMPORARIAMENTE = 4,
+        BanidoTemporariamente = 4,
         [Description("Banido")]
-        BANIDOETERNAMENTE = 5
+        BanidoEternamente = 5
     }
 }

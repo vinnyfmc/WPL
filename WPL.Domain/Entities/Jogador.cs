@@ -7,6 +7,11 @@ namespace WPL.Domain.Entities
 {
     public class Jogador : _EntityBase
     {
+        public Jogador()
+        {
+
+        }
+
         public string Nome { get; set; }
         public string TagName { get; set; }
         public DateTime DataNascimento { get; set; }
@@ -14,11 +19,38 @@ namespace WPL.Domain.Entities
         public string Email { get; set; }
         public string CEP { get; set; }
         public string Senha { get; set; }
+        public JogadorStatusEnum Status { get; set; }
 
         public Plataforma Plataforma { get; set; }
         public Posicao PosicaoPreferida { get; set; }
-        
+
         public IEnumerable<JogadorStatusHistorico> HistoricosStatus { get; set; }
+
+        public Jogador(
+            long id,
+            long idJogador,
+            string nome,
+            string tagName,
+            DateTime dataNascimento,
+            string cpf,
+            string email,
+            string cep,
+            string senha,
+            Plataforma plataforma,
+            Posicao posicaoPreferida
+            )
+             : base(idJogador)
+        {
+            this.Nome = nome;
+            this.TagName = tagName;
+            this.DataNascimento = dataNascimento;
+            this.CPF = cpf;
+            this.Email = email;
+            this.CEP = cep;
+            this.Senha = senha;
+            this.Plataforma = plataforma;
+            this.PosicaoPreferida = posicaoPreferida;
+        }
 
         public JogadorStatusEnum ObterStatus()
         {
@@ -39,32 +71,6 @@ namespace WPL.Domain.Entities
                 });
         }
         
-        public Jogador(){}
-
-        public Jogador(
-            long id, 
-            long idJogador, 
-            string nome, 
-            string tagName, 
-            DateTime dataNascimento, 
-            string cpf,
-            string email, 
-            string cep,
-            string senha,
-            Plataforma plataforma, 
-            Posicao posicaoPreferida
-            )
-             : base(idJogador)
-        {
-            this.Nome = nome;
-            this.TagName = tagName;
-            this.DataNascimento = dataNascimento;
-            this.CPF = cpf;
-            this.Email = email;
-            this.CEP = cep;
-            this.Senha = senha;
-            this.Plataforma = plataforma;
-            this.PosicaoPreferida = posicaoPreferida;
-        }
+        
     }
 }

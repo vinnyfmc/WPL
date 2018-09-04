@@ -2,12 +2,15 @@
 {
     public class Plataforma : _EntityBase
     {
-        public string Nome { get; set; }
-        public string NomeAbrevado { get; set; }
-        public string Logo { get; set; }
-        public StatusEnum Status { get; set; }
+        public Plataforma()
+        {
 
-        public Plataforma(){}
+        }
+
+        private string Nome { get; set; }
+        private string NomeAbreviado { get; set; }
+        private string Logo { get; set; }
+        private StatusEnum Status { get; set; }
 
         public Plataforma(
             long idJogador, 
@@ -18,7 +21,7 @@
             : base(idJogador)
         {
             this.Nome = nome;
-            this.NomeAbrevado = nomeAbrevado;
+            this.NomeAbreviado = nomeAbrevado;
             this.Logo = logo;
             this.Status = status;
         }

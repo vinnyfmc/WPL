@@ -4,26 +4,25 @@ using WPL.Domain.Entities;
 
 namespace WPL.Data.EntityConfig
 {
-    public class JogadorConfig : IEntityTypeConfiguration<Jogador>
+    public class CampeonatoEdicaoConfig : IEntityTypeConfiguration<CampeonatoEdicao>
     {
-        public void Configure(EntityTypeBuilder<Jogador> builder)
+        public void Configure(EntityTypeBuilder<CampeonatoEdicao> builder)
         {
-            builder.ToTable("Jogador");
+            builder.ToTable("CampeonatoEdicao");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.CEP).HasColumnType("varchar(8)");
-            builder.Property(x => x.CPF).HasColumnType("varchar(11)").IsRequired();
-            builder.Property(x => x.Email).HasColumnType("varchar(100)").IsRequired();
             builder.Property(x => x.Nome).HasColumnType("varchar(200)").IsRequired();
-            builder.Property(x => x.TagName).HasColumnType("varchar(20)").IsRequired();
-            builder.Property(x => x.DataNascimento).HasColumnType("DateTime").IsRequired();
+            builder.Property(x => x.DataInicio).HasColumnType("DateTime").IsRequired();
+            builder.Property(x => x.DataFim).HasColumnType("DateTime");
+            builder.Property(x => x.ImagemLogo).HasColumnType("varchar(300)");
+            builder.Property(x => x.ImagemPremiacao).HasColumnType("varchar(300)");
+            builder.Property(x => x.ImagemRegulamento).HasColumnType("varchar(300)");
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.Tipo).IsRequired();
 
-            builder.HasOne(x => x.Plataforma);
-            builder.HasOne(x => x.PosicaoPreferida);
-
-            builder.HasMany(x => x.HistoricosStatus);
+            builder.HasMany(x => x.Fases);
+            builder.HasMany(x => x.Times);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime").IsRequired();
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime").IsRequired();

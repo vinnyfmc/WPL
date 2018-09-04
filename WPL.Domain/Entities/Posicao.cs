@@ -2,23 +2,26 @@
 {
     public class Posicao : _EntityBase
     {
-        public string Nome { get; set; }
-        public string NomeAbrevado { get; set; }
-        public string Logo { get; set; }
-        public StatusEnum Status { get; set; }
+        public Posicao()
+        {
 
-        public Posicao(){}
+        }
+
+        private string Nome { get; set; }
+        private string NomeAbreviado { get; set; }
+        private string Logo { get; set; }
+        private StatusEnum Status { get; set; }
 
         public Posicao(
             long idJogador, 
             string nome, 
-            string nomeAbrevado, 
+            string nomeAbreviado, 
             string logo, 
             StatusEnum status)
             : base(idJogador)
         {
             this.Nome = nome;
-            this.NomeAbrevado = nomeAbrevado;
+            this.NomeAbreviado = NomeAbreviado;
             this.Logo = logo;
             this.Status = status;
         }

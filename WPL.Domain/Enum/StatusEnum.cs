@@ -5,8 +5,8 @@ namespace WPL.Domain
     public enum StatusEnum
     {
         [Description("Inativo")]
-        INATIVO = 0,
+        Inativo = 0,
         [Description("Ativo")]
-        ATIVO = 1
+        Ativo = 1
     }
 }

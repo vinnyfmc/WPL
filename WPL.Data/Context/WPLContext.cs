@@ -17,10 +17,19 @@ namespace WPL.Data.Context
             Database.EnsureCreated();
         }
 
-        public DbSet<Jogador> Jogadores { get; set; }
-        public DbSet<JogadorStatusHistorico> JogadorHistoricosStatus { get; set; }
-        public DbSet<Posicao> Posicoes { get; set; }
-        public DbSet<Plataforma> Plataformas { get; set; }
+        public DbSet<Campeonato> Campeonato { get; set; }
+        public DbSet<CampeonatoEdicao> CampeonatoEdicao { get; set; }
+        public DbSet<CampeonatoEdicaoFase> CampeonatoEdicaoFase { get; set; }
+        public DbSet<CampeonatoEdicaoTime> CampeonatoEdicaoTime { get; set; }
+        public DbSet<Jogador> Jogador { get; set; }
+        public DbSet<JogadorStatusHistorico> JogadorHistoricoStatus { get; set; }
+        public DbSet<Jogo> Jogo { get; set; }
+        public DbSet<JogoJogador> JogoJogador { get; set; }
+        public DbSet<JogoTime> JogoTime { get; set; }
+        public DbSet<Plataforma> Plataforma { get; set; }
+        public DbSet<Posicao> Posicao { get; set; }
+        public DbSet<Time> Time { get; set; }
+        public DbSet<TimeJogador> TimeJogador { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
