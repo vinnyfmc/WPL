@@ -7,10 +7,10 @@
 
         }
 
-        private string Nome { get; set; }
-        private string NomeAbreviado { get; set; }
-        private string Logo { get; set; }
-        private StatusEnum Status { get; set; }
+        public string Nome { get; set; }
+        public string NomeAbreviado { get; set; }
+        public string Logo { get; set; }
+        public StatusEnum Status { get; set; }
 
         public Plataforma(
             long idJogador, 

@@ -14,14 +14,14 @@ namespace WPL.Data.EntityConfig
 
             builder.Property(x => x.Logo).HasColumnType("varchar(300)");
             builder.Property(x => x.Nome).HasColumnType("varchar(200)").IsRequired();
-            builder.Property(x => x.NomeAbrevado).HasColumnType("varchar(5)").IsRequired();
+            builder.Property(x => x.NomeAbreviado).HasColumnType("varchar(5)").IsRequired();
             builder.Property(x => x.Status).IsRequired();
 
-            builder.Property(x => x.DataAlteracao).HasColumnType("DateTime").IsRequired();
-            builder.Property(x => x.DataCadastro).HasColumnType("DateTime").IsRequired();
+            builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
+            builder.Property(x => x.DataCadastro).HasColumnType("DateTime");
             builder.Property(x => x.DataExclusao).HasColumnType("DateTime");
-            builder.Property(x => x.IdJogadorAlteracao).IsRequired();
-            builder.Property(x => x.IdJogadorCadastro).IsRequired();
+            builder.Property(x => x.IdJogadorAlteracao);
+            builder.Property(x => x.IdJogadorCadastro);
             builder.Property(x => x.IdJogadorExclusao);
         }
     }

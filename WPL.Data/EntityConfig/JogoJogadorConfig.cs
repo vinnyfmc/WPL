@@ -4,17 +4,24 @@ using WPL.Domain.Entities;
 
 namespace WPL.Data.EntityConfig
 {
-    public class JogadorStatusHistoricoConfig : IEntityTypeConfiguration<JogadorStatusHistorico>
+    public class JogoJogadorConfig : IEntityTypeConfiguration<JogoJogador>
     {
-        public void Configure(EntityTypeBuilder<JogadorStatusHistorico> builder)
+        public void Configure(EntityTypeBuilder<JogoJogador> builder)
         {
-            builder.ToTable("JogadorStatusHistorico");
+            builder.ToTable("JogoJogador");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.Gols).IsRequired();
+            builder.Property(x => x.Assistencias).IsRequired();
+            builder.Property(x => x.Nota);
+            builder.Property(x => x.CartaoAmarelo).HasColumnType("bit");
+            builder.Property(x => x.CartaoVermelho).HasColumnType("bit");
+            builder.Property(x => x.MelhorEmCampo).HasColumnType("bit");
 
+            builder.HasOne(x => x.Jogo);
             builder.HasOne(x => x.Jogador);
+            builder.HasOne(x => x.Posicao);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");

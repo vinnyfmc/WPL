@@ -9,12 +9,12 @@ namespace WPL.Domain.Entities
 
         }
 
-        private string Nome { get; set; }
-        private string NomeAbreviado { get; set; }
-        private DateTime DataFundacao { get; set; }
-        private string Logo { get; set; }
+        public string Nome { get; set; }
+        public string NomeAbreviado { get; set; }
+        public DateTime DataFundacao { get; set; }
+        public string ImagemLogo { get; set; }
+        public StatusEnum Status { get; set; }
 
-        private Plataforma Plataforma { get; set; }
-        private StatusEnum Status { get; set; }
+        public Plataforma Plataforma { get; set; }
     }
 }

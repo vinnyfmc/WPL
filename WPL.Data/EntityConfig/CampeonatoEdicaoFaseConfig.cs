@@ -18,12 +18,12 @@ namespace WPL.Data.EntityConfig
             builder.HasOne(x => x.Edicao);
 
             builder.HasMany(x => x.Jogos);
-            
-            builder.Property(x => x.DataAlteracao).HasColumnType("DateTime").IsRequired();
-            builder.Property(x => x.DataCadastro).HasColumnType("DateTime").IsRequired();
+
+            builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
+            builder.Property(x => x.DataCadastro).HasColumnType("DateTime");
             builder.Property(x => x.DataExclusao).HasColumnType("DateTime");
-            builder.Property(x => x.IdJogadorAlteracao).IsRequired();
-            builder.Property(x => x.IdJogadorCadastro).IsRequired();
+            builder.Property(x => x.IdJogadorAlteracao);
+            builder.Property(x => x.IdJogadorCadastro);
             builder.Property(x => x.IdJogadorExclusao);
         }
     }

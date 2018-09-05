@@ -7,12 +7,12 @@
 
         }
 
-        private bool EhManager { get; set; }
-        private bool EhSubManager { get; set; }
+        public bool EhManager { get; set; }
+        public bool EhSubManager { get; set; }
+        public StatusEnum Status { get; set; }
 
-        private Posicao Posicao { get; set; }
-        private Jogador Jogador { get; set; }
-        private Time Time { get; set; }
-        private StatusEnum Status { get; set; }
+        public Posicao PosicaoDefault { get; set; }
+        public Jogador Jogador { get; set; }
+        public Time Time { get; set; }   
     }
 }

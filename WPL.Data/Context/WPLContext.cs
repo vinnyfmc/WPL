@@ -38,10 +38,19 @@ namespace WPL.Data.Context
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CampeonatoConfig());
+            modelBuilder.ApplyConfiguration(new CampeonatoEdicaoConfig());
+            modelBuilder.ApplyConfiguration(new CampeonatoEdicaoFaseConfig());
+            modelBuilder.ApplyConfiguration(new CampeonatoEdicaoTimeConfig());
             modelBuilder.ApplyConfiguration(new JogadorConfig());
+            modelBuilder.ApplyConfiguration(new JogadorStatusHistoricoConfig());
+            modelBuilder.ApplyConfiguration(new JogoConfig());
+            modelBuilder.ApplyConfiguration(new JogoJogadorConfig());
+            modelBuilder.ApplyConfiguration(new JogoTimeConfig());
             modelBuilder.ApplyConfiguration(new PlataformaConfig());
             modelBuilder.ApplyConfiguration(new PosicaoConfig());
-            modelBuilder.ApplyConfiguration(new JogadorStatusHistoricoConfig());
+            modelBuilder.ApplyConfiguration(new TimeConfig());
+            modelBuilder.ApplyConfiguration(new TimeJogadorConfig());
         }
 
         
