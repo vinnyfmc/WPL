@@ -11,16 +11,16 @@ namespace WPL.Domain.Entities
 
         }
 
-        private int Gols { get; set; }
-        private int Assistencias { get; set; }
-        private decimal? Nota { get; set; }
-        private bool CartaoAmarelo { get; set; }
-        private bool CartaoVermelho { get; set; }
-        private bool MelhorEmCampo { get; set; }
-
-        private Jogo Jogo { get; set; }
-        private Jogador Jogador { get; set; }
-        private Posicao Posicao { get; set; }
+        public int Gols { get; set; }
+        public int Assistencias { get; set; }
+        public decimal? Nota { get; set; }
+        public bool CartaoAmarelo { get; set; }
+        public bool CartaoVermelho { get; set; }
+        public bool MelhorEmCampo { get; set; }
+        
+        public Jogo Jogo { get; set; }
+        public Jogador Jogador { get; set; }
+        public Posicao Posicao { get; set; }
 
 
         public JogoJogador(

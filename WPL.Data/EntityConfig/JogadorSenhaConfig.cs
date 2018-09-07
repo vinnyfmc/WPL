@@ -2,26 +2,20 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WPL.Domain.Entities;
 
-
 namespace WPL.Data.EntityConfig
 {
-    public class JogoConfig : IEntityTypeConfiguration<Jogo>
+    public class JogadorSenhaConfig : IEntityTypeConfiguration<JogadorSenha>
     {
-        public void Configure(EntityTypeBuilder<Jogo> builder)
+        public void Configure(EntityTypeBuilder<JogadorSenha> builder)
         {
-            builder.ToTable("Jogo");
+            builder.ToTable("JogadorSenha");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Data).HasColumnType("DateTime").IsRequired();
-            builder.Property(x => x.GolsCasa);
-            builder.Property(x => x.GolsCasa);
-            builder.Property(x => x.Status).IsRequired();
-
-            builder.HasOne(x => x.Fase);
-            builder.HasOne(x => x.TimeCasa);
-            builder.HasOne(x => x.TimeFora);
-
+            builder.Property(x => x.Senha).HasColumnType("varchar(20)").IsRequired();
+            
+            builder.HasOne(x => x.Jogador);
+            
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");
             builder.Property(x => x.DataExclusao).HasColumnType("DateTime");

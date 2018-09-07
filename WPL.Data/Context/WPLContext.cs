@@ -22,6 +22,7 @@ namespace WPL.Data.Context
         public DbSet<CampeonatoEdicaoFase> CampeonatoEdicaoFase { get; set; }
         public DbSet<CampeonatoEdicaoTime> CampeonatoEdicaoTime { get; set; }
         public DbSet<Jogador> Jogador { get; set; }
+        public DbSet<JogadorSenha> JogadorSenha { get; set; }
         public DbSet<JogadorStatusHistorico> JogadorHistoricoStatus { get; set; }
         public DbSet<Jogo> Jogo { get; set; }
         public DbSet<JogoJogador> JogoJogador { get; set; }
@@ -43,6 +44,7 @@ namespace WPL.Data.Context
             modelBuilder.ApplyConfiguration(new CampeonatoEdicaoFaseConfig());
             modelBuilder.ApplyConfiguration(new CampeonatoEdicaoTimeConfig());
             modelBuilder.ApplyConfiguration(new JogadorConfig());
+            modelBuilder.ApplyConfiguration(new JogadorSenhaConfig());
             modelBuilder.ApplyConfiguration(new JogadorStatusHistoricoConfig());
             modelBuilder.ApplyConfiguration(new JogoConfig());
             modelBuilder.ApplyConfiguration(new JogoJogadorConfig());

@@ -13,11 +13,32 @@ namespace WPL.Domain.Entities
         public string NomeAbreviado { get; set; }
         public string ImagemLogo { get; set; }
         public string ImagemRegulamentoSugestao { get; set; }
+
         public StatusEnum Status { get; set; }
         public CampeonatoTipoEnum TipoSugestao { get; set; }
-
         public Plataforma Plataforma { get; set; }
 
         public IEnumerable<CampeonatoEdicao> Edicoes { get; set; }
+
+        public Campeonato(
+            long idJogador,
+            string nome,
+            string nomeAbreviado,
+            string imagemLogo,
+            string imagemRegulamentoSugestao,
+            CampeonatoTipoEnum tipoSugestao,
+            Plataforma plataforma
+            )
+            :base(idJogador)
+        {
+            this.Nome = nome;
+            this.NomeAbreviado = nomeAbreviado;
+            this.ImagemLogo = imagemLogo;
+            this.ImagemRegulamentoSugestao = imagemRegulamentoSugestao;
+            this.Status = StatusEnum.Ativo;
+            this.TipoSugestao = tipoSugestao;
+            this.Plataforma = plataforma;
+        }
+
     }
 }

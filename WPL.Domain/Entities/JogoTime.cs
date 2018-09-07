@@ -11,16 +11,16 @@ namespace WPL.Domain.Entities
 
         }
 
-        private int? GolsCasa { get; set; }
-        private int? GolsFora { get; set; }
-        private string ImagemPlacar { get; set; }
-        private string ImagemAssistencias { get; set; }
-        private string ImagemGols { get; set; }
-        private string ImagemNotas { get; set; }
-
-        private Jogo Jogo { get; set; }
-        private Time Time { get; set; }
-        private StatusEnum Confirmado { get; set; }
+        public int? GolsCasa { get; set; }
+        public int? GolsFora { get; set; }
+        public string ImagemPlacar { get; set; }
+        public string ImagemAssistencias { get; set; }
+        public string ImagemGols { get; set; }
+        public string ImagemNotas { get; set; }
+        
+        public Jogo Jogo { get; set; }
+        public Time Time { get; set; }
+        public StatusEnum Confirmado { get; set; }
 
         public JogoTime(
             long idJogador,

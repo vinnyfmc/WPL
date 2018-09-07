@@ -17,7 +17,7 @@ namespace WPL.Data.Repositories
             this.ctx = ctx;
         }
 
-        public Jogador ObterPorEmail(string email)
+        public Jogador GetByEmail(string email)
         {
             
             return ctx.Jogador.Where(x => x.Email == email).FirstOrDefault();

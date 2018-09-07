@@ -9,13 +9,13 @@ namespace WPL.Domain.Entities
 
         }
 
-        private string Nome { get; set; }
-        private string NomeAbreviado { get; set; }
-        private DateTime DataFundacao { get; set; }
-        private string ImagemLogo { get; set; }
-
-        private Plataforma Plataforma { get; set; }
-        private TimeStatusEnum Status { get; set; }
+        public string Nome { get; set; }
+        public string NomeAbreviado { get; set; }
+        public DateTime DataFundacao { get; set; }
+        public string ImagemLogo { get; set; }
+        
+        public Plataforma Plataforma { get; set; }
+        public TimeStatusEnum Status { get; set; }
 
         public Time(
             long idJogador,

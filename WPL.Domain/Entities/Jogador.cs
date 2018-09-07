@@ -18,15 +18,14 @@ namespace WPL.Domain.Entities
         public string CPF { get; set; }
         public string Email { get; set; }
         public string CEP { get; set; }
-        public string Senha { get; set; }
-        
+
+        public JogadorSenha JogadorSenha { get; set; }
         public Plataforma Plataforma { get; set; }
         public Posicao PosicaoPreferida { get; set; }
 
         public ICollection<JogadorStatusHistorico> HistoricosStatus { get; set; }
 
         public Jogador(
-            long id,
             long idJogador,
             string nome,
             string tagName,
@@ -46,9 +45,14 @@ namespace WPL.Domain.Entities
             this.CPF = cpf;
             this.Email = email;
             this.CEP = cep;
-            this.Senha = senha;
             this.Plataforma = plataforma;
             this.PosicaoPreferida = posicaoPreferida;
+
+            this.JogadorSenha = new JogadorSenha(
+                idJogador,
+                senha,
+                this
+                );
 
             this.HistoricosStatus.Add(new JogadorStatusHistorico(
                 idJogador,
@@ -57,12 +61,21 @@ namespace WPL.Domain.Entities
                 ));
         }
 
-        public JogadorStatusEnum ObterStatus()
+        public JogadorStatusEnum GetStatus()
         {
             return this.HistoricosStatus.OrderByDescending(x => x.Id).Select(p => p.Status).FirstOrDefault();
         }
-        
-        public void IncluirStatus(long idJogador, JogadorStatusEnum status)
+
+        public void UpdateJogadorSenha(
+            long idJogador,
+            string senha)
+        {
+            this.JogadorSenha.UpdateSenha(
+                idJogador,
+                senha);
+        }
+
+        public void AddStatus(long idJogador, JogadorStatusEnum status)
         {
             this.HistoricosStatus.Add(
                 new JogadorStatusHistorico(

@@ -18,6 +18,7 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.ImagemLogo).HasColumnType("varchar(300)");
             builder.Property(x => x.ImagemPremiacao).HasColumnType("varchar(300)");
             builder.Property(x => x.ImagemRegulamento).HasColumnType("varchar(300)");
+
             builder.Property(x => x.Status).IsRequired();
             builder.Property(x => x.Tipo).IsRequired();
 

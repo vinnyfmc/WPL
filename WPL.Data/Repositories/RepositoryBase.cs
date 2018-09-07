@@ -18,7 +18,7 @@ namespace WPL.Data.Repositories
             entities = ctx.Set<TEntity>();
         }
 
-        public void Atualizar(TEntity obj)
+        public void Update(TEntity obj)
         {
             if (obj == null)
             {
@@ -32,7 +32,7 @@ namespace WPL.Data.Repositories
         {
         }
 
-        public void Incluir(TEntity obj)
+        public void Add(TEntity obj)
         {
             if (obj == null)
             {
@@ -42,17 +42,17 @@ namespace WPL.Data.Repositories
             ctx.SaveChanges();
         }
 
-        public TEntity ObterPorId(long id)
+        public TEntity GetById(long id)
         {
             return entities.Find(id);
         }
 
-        public IEnumerable<TEntity> ObterTodos()
+        public IEnumerable<TEntity> GetAll()
         {
             return entities.AsEnumerable();
         }
 
-        public void Remover(TEntity obj)
+        public void Remove(TEntity obj)
         {
             if (obj == null)
             {

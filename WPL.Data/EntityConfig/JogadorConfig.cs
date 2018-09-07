@@ -18,8 +18,8 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.Nome).HasColumnType("varchar(200)").IsRequired();
             builder.Property(x => x.TagName).HasColumnType("varchar(20)").IsRequired();
             builder.Property(x => x.DataNascimento).HasColumnType("DateTime").IsRequired();
-            builder.Property(x => x.Status).IsRequired();
-
+            
+            builder.HasOne(x => x.JogadorSenha);
             builder.HasOne(x => x.Plataforma);
             builder.HasOne(x => x.PosicaoPreferida);
 
