@@ -19,12 +19,11 @@ namespace WPL.Domain.Entities
         public string Email { get; set; }
         public string CEP { get; set; }
         public string Senha { get; set; }
-        public JogadorStatusEnum Status { get; set; }
-
+        
         public Plataforma Plataforma { get; set; }
         public Posicao PosicaoPreferida { get; set; }
 
-        public IEnumerable<JogadorStatusHistorico> HistoricosStatus { get; set; }
+        public ICollection<JogadorStatusHistorico> HistoricosStatus { get; set; }
 
         public Jogador(
             long id,
@@ -50,6 +49,12 @@ namespace WPL.Domain.Entities
             this.Senha = senha;
             this.Plataforma = plataforma;
             this.PosicaoPreferida = posicaoPreferida;
+
+            this.HistoricosStatus.Add(new JogadorStatusHistorico(
+                idJogador,
+                JogadorStatusEnum.Criado,
+                this
+                ));
         }
 
         public JogadorStatusEnum ObterStatus()
@@ -59,16 +64,12 @@ namespace WPL.Domain.Entities
         
         public void IncluirStatus(long idJogador, JogadorStatusEnum status)
         {
-            this.HistoricosStatus.ToList().Add(
-                new JogadorStatusHistorico
-                {
-                    IdJogadorCadastro = idJogador,
-                    DataCadastro = DateTime.Now,
-                    IdJogadorAlteracao = idJogador,
-                    DataAlteracao = DateTime.Now,
-                    Jogador = this,
-                    Status = status
-                });
+            this.HistoricosStatus.Add(
+                new JogadorStatusHistorico(
+                    idJogador,
+                    status,
+                    this
+                    ));
         }
         
         

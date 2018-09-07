@@ -16,14 +16,13 @@
             long idJogador, 
             string nome, 
             string nomeAbreviado, 
-            string logo, 
-            StatusEnum status)
+            string logo)
             : base(idJogador)
         {
             this.Nome = nome;
             this.NomeAbreviado = NomeAbreviado;
             this.Logo = logo;
-            this.Status = status;
+            this.Status = StatusEnum.Ativo;
         }
 
     }

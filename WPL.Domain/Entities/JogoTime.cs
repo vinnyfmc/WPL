@@ -11,8 +11,8 @@ namespace WPL.Domain.Entities
 
         }
 
-        private int GolsCasa { get; set; }
-        private int GolsFora { get; set; }
+        private int? GolsCasa { get; set; }
+        private int? GolsFora { get; set; }
         private string ImagemPlacar { get; set; }
         private string ImagemAssistencias { get; set; }
         private string ImagemGols { get; set; }
@@ -20,7 +20,17 @@ namespace WPL.Domain.Entities
 
         private Jogo Jogo { get; set; }
         private Time Time { get; set; }
-
         private StatusEnum Confirmado { get; set; }
+
+        public JogoTime(
+            long idJogador,
+            Jogo jogo,
+            Time time)
+            : base(idJogador)
+        {
+            this.Jogo = jogo;
+            this.Time = time;
+            this.Confirmado = StatusEnum.Inativo;
+        }
     }
 }
