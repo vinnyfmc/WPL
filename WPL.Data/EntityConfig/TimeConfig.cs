@@ -4,26 +4,21 @@ using WPL.Domain.Entities;
 
 namespace WPL.Data.EntityConfig
 {
-    public class JogadorConfig : IEntityTypeConfiguration<Jogador>
+    public class TimeConfig : IEntityTypeConfiguration<Time>
     {
-        public void Configure(EntityTypeBuilder<Jogador> builder)
+        public void Configure(EntityTypeBuilder<Time> builder)
         {
-            builder.ToTable("Jogador");
+            builder.ToTable("Time");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.CEP).HasColumnType("varchar(8)");
-            builder.Property(x => x.CPF).HasColumnType("varchar(11)").IsRequired();
-            builder.Property(x => x.Email).HasColumnType("varchar(100)").IsRequired();
             builder.Property(x => x.Nome).HasColumnType("varchar(200)").IsRequired();
-            builder.Property(x => x.TagName).HasColumnType("varchar(20)").IsRequired();
-            builder.Property(x => x.DataNascimento).HasColumnType("DateTime").IsRequired();
+            builder.Property(x => x.NomeAbreviado).HasColumnType("varchar(5)").IsRequired();
+            builder.Property(x => x.DataFundacao).HasColumnType("DateTime").IsRequired();
+            builder.Property(x => x.ImagemLogo).HasColumnType("varchar(300)");
             builder.Property(x => x.Status).IsRequired();
 
             builder.HasOne(x => x.Plataforma);
-            builder.HasOne(x => x.PosicaoPreferida);
-
-            builder.HasMany(x => x.HistoricosStatus);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");

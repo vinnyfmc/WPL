@@ -22,7 +22,7 @@ namespace WPL.Application
             foreach(Plataforma p in plataformas)
             {
                 plataformasModel.Add(
-                    new PlataformaModel(p.Id, p.Nome, p.NomeAbrevado, p.Logo)
+                    new PlataformaModel(p.Id, p.Nome, p.NomeAbreviado, p.Logo)
                 );
             }
             

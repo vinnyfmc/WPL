@@ -4,17 +4,22 @@ using WPL.Domain.Entities;
 
 namespace WPL.Data.EntityConfig
 {
-    public class CampeonatoEdicaoTimeConfig : IEntityTypeConfiguration<CampeonatoEdicaoTime>
+    public class JogoTimeConfig : IEntityTypeConfiguration<JogoTime>
     {
-        public void Configure(EntityTypeBuilder<CampeonatoEdicaoTime> builder)
+        public void Configure(EntityTypeBuilder<JogoTime> builder)
         {
-            builder.ToTable("CampeonatoEdicaoTime");
+            builder.ToTable("JogoTime");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.GolsCasa).IsRequired();
+            builder.Property(x => x.GolsFora).IsRequired();
+            builder.Property(x => x.ImagemPlacar).HasColumnType("varchar(300)"); 
+            builder.Property(x => x.ImagemAssistencias).HasColumnType("varchar(300)"); 
+            builder.Property(x => x.ImagemGols).HasColumnType("varchar(300)"); 
+            builder.Property(x => x.ImagemNotas).HasColumnType("varchar(300)"); 
 
-            builder.HasOne(x => x.Edicao);
+            builder.HasOne(x => x.Jogo);
             builder.HasOne(x => x.Time);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");

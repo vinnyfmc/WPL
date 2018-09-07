@@ -4,10 +4,10 @@ using WPL.Domain.Interfaces.Repositories;
 
 namespace WPL.Data.Repositories
 {
-    public class PlataformaRepository : RepositoryBase<Plataforma>, IPlataformaRepository
+    public class TimeRepository : RepositoryBase<Time>, ITimeRepository
     {
         WPLContext ctx;
-        public PlataformaRepository(WPLContext ctx)
+        public TimeRepository(WPLContext ctx)
             : base(ctx)
         {
             this.ctx = ctx;

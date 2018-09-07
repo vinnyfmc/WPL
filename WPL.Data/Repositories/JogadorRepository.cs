@@ -16,10 +16,11 @@ namespace WPL.Data.Repositories
         {
             this.ctx = ctx;
         }
+
         public Jogador ObterPorEmail(string email)
         {
             
-            return ctx.Jogadores.Where(x => x.Email == email).FirstOrDefault();
+            return ctx.Jogador.Where(x => x.Email == email).FirstOrDefault();
         }
     }
 }

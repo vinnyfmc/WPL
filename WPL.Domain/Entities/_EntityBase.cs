@@ -7,10 +7,10 @@ namespace WPL.Domain.Entities
     public class _EntityBase
     {
         public long Id { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public long IdJogadorCadastro { get; set; }
-        public DateTime DataAlteracao { get; set; }
-        public long IdJogadorAlteracao { get; set; }
+        public DateTime? DataCadastro { get; set; }
+        public long? IdJogadorCadastro { get; set; }
+        public DateTime? DataAlteracao { get; set; }
+        public long? IdJogadorAlteracao { get; set; }
         public DateTime? DataExclusao { get; set; }
         public long? IdJogadorExclusao { get; set; }
 
