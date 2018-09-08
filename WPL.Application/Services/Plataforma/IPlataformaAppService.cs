@@ -5,6 +5,6 @@ namespace WPL.Application.Services
 {
     public interface IPlataformaAppService
     {
-        IEnumerable<PlataformaModel> ObterTodos();
+        IEnumerable<PlataformaModel> GetAll();
     }
 }

@@ -14,10 +14,13 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.EhManager).HasColumnType("bit").IsRequired();
             builder.Property(x => x.EhSubManager).HasColumnType("bit").IsRequired();
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.PosicaoId).IsRequired();
+            builder.Property(x => x.JogadorId).IsRequired();
+            builder.Property(x => x.TimeId).IsRequired();
 
-            builder.HasOne(x => x.PosicaoDefault);
-            builder.HasOne(x => x.Jogador);
-            builder.HasOne(x => x.Time);
+            builder.HasOne(x => x.PosicaoDefault).WithMany(p => p.TimeJogadores).HasForeignKey(x => x.PosicaoId);
+            builder.HasOne(x => x.Jogador).WithMany(p => p.TimesJogador).HasForeignKey(x => x.JogadorId);
+            builder.HasOne(x => x.Time).WithMany(p => p.TimeJogadores).HasForeignKey(x => x.TimeId);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");

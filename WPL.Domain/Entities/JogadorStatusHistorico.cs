@@ -8,6 +8,8 @@
         }
 
         public JogadorStatusEnum Status { get; set; }
+
+        public long JogadorId { get; set; }
         public Jogador Jogador { get; set; }
 
         public JogadorStatusHistorico(

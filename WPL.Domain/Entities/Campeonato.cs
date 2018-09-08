@@ -13,11 +13,10 @@ namespace WPL.Domain.Entities
         public string NomeAbreviado { get; set; }
         public string ImagemLogo { get; set; }
         public string ImagemRegulamentoSugestao { get; set; }
-
         public StatusEnum Status { get; set; }
         public CampeonatoTipoEnum TipoSugestao { get; set; }
-        public Plataforma Plataforma { get; set; }
 
+        public IEnumerable<CampeonatoPlataforma> Plataformas { get; set; }
         public IEnumerable<CampeonatoEdicao> Edicoes { get; set; }
 
         public Campeonato(
@@ -37,7 +36,6 @@ namespace WPL.Domain.Entities
             this.ImagemRegulamentoSugestao = imagemRegulamentoSugestao;
             this.Status = StatusEnum.Ativo;
             this.TipoSugestao = tipoSugestao;
-            this.Plataforma = plataforma;
         }
 
     }

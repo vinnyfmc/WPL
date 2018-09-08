@@ -19,7 +19,7 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.Status).IsRequired();
             builder.Property(x => x.TipoSugestao);
 
-            builder.HasOne(x => x.Plataforma);
+            builder.HasMany(x => x.Plataformas);
             builder.HasMany(x => x.Edicoes);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");

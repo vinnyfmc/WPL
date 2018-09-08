@@ -1,0 +1,38 @@
+﻿@using WPL.Application.Models
+@model IEnumerable<CampeonatoEdicaoModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Slider Section Start Here -->
+<div class="slider-section4 slider-main">
+    <div id="slider-five" class="owl-carousel">
+        @{
+            foreach (CampeonatoEdicaoModel edicaoModel in Model)
+            {
+                <div class="@(edicaoModel.PlataformaDefault ? "item active" : "item");">
+                <img src="images/edicao/banner/@edicaoModel.ImagemBanner" alt="Slider image">
+
+                <div class="dsc">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="slider-text text-center">
+                                        <h1 data-animation-in="slideInDown" data-animation-out="animate-out slideOutUp">@edicaoModel.Nome</h1>
+                                        <div data-animation-in="slideInLeft" data-animation-out="animate-out fadeOut" class="CountDownTimer" data-date="@edicaoModel.DataInicio"></div>
+                                        <div class="btn-slider">
+                                            <a href="#" class="btn1" data-animation-in="slideInUp" data-animation-out="animate-out slideOutDown">Regulamento</a>
+                                            <a href="#" class="btn2" data-animation-in="slideInDown" data-animation-out="animate-out slideOutUp">Increva-se</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<!-- Slider Section end Here -->

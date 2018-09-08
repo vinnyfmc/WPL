@@ -10,22 +10,23 @@ namespace WPL.Domain.Entities
         }
 
         public string Nome { get; set; }
-
         public StatusEnum Status { get; set; }
-        public CampeonatoEdicao Edicao { get; set; }
+
+        public long CampeonatoEdicaoId { get; set; }
+        public CampeonatoEdicao CampeonatoEdicao { get; set; }
 
         public IEnumerable<Jogo> Jogos { get; set; }
 
         public CampeonatoEdicaoFase(
             long idJogador,
             string nome,
-            CampeonatoEdicao edicao
+            CampeonatoEdicao campeonatoEdicao
             )
             :base(idJogador)
         {
             this.Nome = nome;
             this.Status = StatusEnum.Ativo;
-            this.Edicao = edicao;
+            this.CampeonatoEdicao = campeonatoEdicao;
         }
     }
 }

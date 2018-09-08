@@ -19,11 +19,16 @@ namespace WPL.Domain.Entities
         public string Email { get; set; }
         public string CEP { get; set; }
 
+        public long JogadorSenhaId { get; set; }
         public JogadorSenha JogadorSenha { get; set; }
+        public long PlataformaId { get; set; }
         public Plataforma Plataforma { get; set; }
+        public long PosicaoId { get; set; }
         public Posicao PosicaoPreferida { get; set; }
 
         public ICollection<JogadorStatusHistorico> HistoricosStatus { get; set; }
+        public ICollection<JogoJogador> JogosJogador { get; set; }
+        public ICollection<TimeJogador> TimesJogador { get; set; }
 
         public Jogador(
             long idJogador,
@@ -50,8 +55,7 @@ namespace WPL.Domain.Entities
 
             this.JogadorSenha = new JogadorSenha(
                 idJogador,
-                senha,
-                this
+                senha
                 );
 
             this.HistoricosStatus.Add(new JogadorStatusHistorico(

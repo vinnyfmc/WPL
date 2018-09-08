@@ -17,9 +17,12 @@ namespace WPL.Domain.Entities
         public bool CartaoAmarelo { get; set; }
         public bool CartaoVermelho { get; set; }
         public bool MelhorEmCampo { get; set; }
-        
+
+        public long JogoId { get; set; }
         public Jogo Jogo { get; set; }
+        public long JogadorId { get; set; }
         public Jogador Jogador { get; set; }
+        public long PosicaoId { get; set; }
         public Posicao Posicao { get; set; }
 
 

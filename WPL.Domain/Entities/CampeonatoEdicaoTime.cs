@@ -8,17 +8,20 @@
         }
 
         public StatusEnum Status { get; set; }
-        public CampeonatoEdicao Edicao { get; set; }
+
+        public long CampeonatoEdicaoId { get; set; }
+        public CampeonatoEdicao CampeonatoEdicao { get; set; }
+        public long TimeId { get; set; }
         public Time Time { get; set; }
 
         public CampeonatoEdicaoTime(
             long idJogador,
-            CampeonatoEdicao edicao,
+            CampeonatoEdicao campeonatoEdicao,
             Time time)
             :base(idJogador)
         {
             this.Status = StatusEnum.Inativo;
-            this.Edicao = edicao;
+            this.CampeonatoEdicao = campeonatoEdicao;
             this.Time = time;
         }
     }

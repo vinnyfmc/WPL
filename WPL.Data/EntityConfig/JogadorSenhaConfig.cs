@@ -13,9 +13,9 @@ namespace WPL.Data.EntityConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Senha).HasColumnType("varchar(20)").IsRequired();
-            
-            builder.HasOne(x => x.Jogador);
-            
+
+            builder.HasMany(x => x.Jogadores);
+
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");
             builder.Property(x => x.DataExclusao).HasColumnType("DateTime");

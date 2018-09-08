@@ -17,10 +17,15 @@ namespace WPL.Domain.Entities
         public string ImagemAssistencias { get; set; }
         public string ImagemGols { get; set; }
         public string ImagemNotas { get; set; }
-        
-        public Jogo Jogo { get; set; }
-        public Time Time { get; set; }
         public StatusEnum Confirmado { get; set; }
+
+        public long JogoId { get; set; }
+        public Jogo Jogo { get; set; }
+        public long TimeId { get; set; }
+        public Time Time { get; set; }
+
+        public IEnumerable<Jogo> JogosTimeCasa { get; set; }
+        public IEnumerable<Jogo> JogosTimeFora { get; set; }
 
         public JogoTime(
             long idJogador,

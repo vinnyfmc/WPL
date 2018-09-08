@@ -14,7 +14,7 @@ namespace WPL.Application.Services
 
         public JogadorModel ObterPorEmail(string email)
         {
-            Jogador jogador = jogadorRepository.ObterPorEmail(email);
+            Jogador jogador = jogadorRepository.GetByEmail(email);
             JogadorModel jogadorModel = new JogadorModel(
                 jogador.Id,
                 jogador.Nome,
@@ -23,14 +23,14 @@ namespace WPL.Application.Services
                 jogador.CPF,
                 jogador.Email,
                 jogador.CEP,
-                jogador.Senha
+                jogador.JogadorSenha.Senha
                 );
             return jogadorModel;
         }
 
         public JogadorModel ObterPorId(long id)
         {
-            Jogador jogador = jogadorRepository.ObterPorId(id);
+            Jogador jogador = jogadorRepository.GetById(id);
             JogadorModel jogadorModel = new JogadorModel(
                 jogador.Id,
                 jogador.Nome,
@@ -39,7 +39,7 @@ namespace WPL.Application.Services
                 jogador.CPF,
                 jogador.Email,
                 jogador.CEP,
-                jogador.Senha
+                jogador.JogadorSenha.Senha
                 );
             return jogadorModel;
         }

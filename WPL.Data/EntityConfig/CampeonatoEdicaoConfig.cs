@@ -16,12 +16,15 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.DataInicio).HasColumnType("DateTime").IsRequired();
             builder.Property(x => x.DataFim).HasColumnType("DateTime");
             builder.Property(x => x.ImagemLogo).HasColumnType("varchar(300)");
+            builder.Property(x => x.ImagemBanner).HasColumnType("varchar(300)");
             builder.Property(x => x.ImagemPremiacao).HasColumnType("varchar(300)");
             builder.Property(x => x.ImagemRegulamento).HasColumnType("varchar(300)");
-
             builder.Property(x => x.Status).IsRequired();
             builder.Property(x => x.Tipo).IsRequired();
+            builder.Property(x => x.CampeonatoId).IsRequired();
 
+            builder.lHasForeignKey(x => x.CampeonatoId);
+            
             builder.HasMany(x => x.Fases);
             builder.HasMany(x => x.Times);
 

@@ -15,14 +15,14 @@ namespace WPL.Application
             this.plataformaRepository = plataformaRepository;
         }
 
-        public IEnumerable<PlataformaModel> ObterTodos()
+        public IEnumerable<PlataformaModel> GetAll()
         {
-            IEnumerable<Plataforma> plataformas = plataformaRepository.ObterTodos();
+            IEnumerable<Plataforma> plataformas = plataformaRepository.GetAll();
             List<PlataformaModel> plataformasModel = new List<PlataformaModel>();
             foreach(Plataforma p in plataformas)
             {
                 plataformasModel.Add(
-                    new PlataformaModel(p.Id, p.Nome, p.NomeAbreviado, p.Logo)
+                    new PlataformaModel(p.Id, p.Nome, p.NomeAbreviado, p.ImagemLogo)
                 );
             }
             

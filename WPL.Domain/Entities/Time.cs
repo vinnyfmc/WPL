@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace WPL.Domain.Entities
 {
@@ -13,9 +15,14 @@ namespace WPL.Domain.Entities
         public string NomeAbreviado { get; set; }
         public DateTime DataFundacao { get; set; }
         public string ImagemLogo { get; set; }
-        
-        public Plataforma Plataforma { get; set; }
         public TimeStatusEnum Status { get; set; }
+
+        public long PlataformaId { get; set; }
+        public Plataforma Plataforma { get; set; }
+
+        public IEnumerable<CampeonatoEdicaoTime> CampeonatoEdicoes { get; set; }
+        public IEnumerable<JogoTime> JogosTime { get; set; }
+        public IEnumerable<TimeJogador> TimeJogadores { get; set; }
 
         public Time(
             long idJogador,

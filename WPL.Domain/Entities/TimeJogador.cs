@@ -9,12 +9,15 @@
 
         public bool EhManager { get; set; }
         public bool EhSubManager { get; set; }
-        
-        public Posicao PosicaoDefault { get; set; }
-        public Jogador Jogador { get; set; }
-        public Time Time { get; set; }
         public StatusEnum Status { get; set; }
 
+        public long PosicaoId { get; set; }
+        public Posicao PosicaoDefault { get; set; }
+        public long JogadorId { get; set; }
+        public Jogador Jogador { get; set; }
+        public long TimeId { get; set; }
+        public Time Time { get; set; }
+        
         public TimeJogador(
             long idJogador,
             bool ehManager,

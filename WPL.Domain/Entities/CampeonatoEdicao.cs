@@ -14,11 +14,14 @@ namespace WPL.Domain.Entities
         public DateTime DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
         public string ImagemLogo { get; set; }
+        public string ImagemBanner { get; set; }
         public string ImagemPremiacao { get; set; }
         public string ImagemRegulamento { get; set; }
-
         public CampeonatoStatusEnum Status { get; set; }
         public CampeonatoTipoEnum Tipo { get; set; }
+
+        public long CampeonatoId { get; set; }
+        public Campeonato Campeonato { get; set; }
 
         public IEnumerable<CampeonatoEdicaoFase> Fases { get; set; }
         public IEnumerable<CampeonatoEdicaoTime> Times { get; set; }
@@ -30,7 +33,8 @@ namespace WPL.Domain.Entities
             string imagemLogo,
             string imagemPremiacao,
             string imagemRegulamento,
-            CampeonatoTipoEnum tipo
+            CampeonatoTipoEnum tipo,
+            Campeonato Campeonato
             )
             :base(idJogador)
         {
@@ -41,6 +45,7 @@ namespace WPL.Domain.Entities
             this.ImagemRegulamento = imagemRegulamento;
             this.Status = CampeonatoStatusEnum.AguardandoInicio;
             this.Tipo = tipo;
+            this.Campeonato = Campeonato;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace WPL.Domain.Entities
+﻿using System.Collections.Generic;
+
+namespace WPL.Domain.Entities
 {
     public class Posicao : _EntityBase
     {
@@ -11,6 +13,10 @@
         public string NomeAbreviado { get; set; }
         public string Logo { get; set; }
         public StatusEnum Status { get; set; }
+
+        public IEnumerable<Jogador> Jogadores { get; set; }
+        public IEnumerable<JogoJogador> JogoJogadores { get; set; }
+        public IEnumerable<TimeJogador> TimeJogadores { get; set; }
 
         public Posicao(
             long idJogador, 

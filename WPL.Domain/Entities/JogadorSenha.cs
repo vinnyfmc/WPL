@@ -13,17 +13,15 @@ namespace WPL.Domain.Entities
 
         public string Senha { get; set; }
 
-        public Jogador Jogador { get; set; }
+        public IEnumerable<Jogador> Jogadores { get; set; }
 
         public JogadorSenha(
             long idJogador,
-            string senha,
-            Jogador Jogador
+            string senha
             )
             :base(idJogador)
         {
             this.Senha = senha;
-            this.Jogador = Jogador;
         }
 
         public void UpdateSenha(

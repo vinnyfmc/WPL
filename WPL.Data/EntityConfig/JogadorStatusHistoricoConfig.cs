@@ -13,8 +13,9 @@ namespace WPL.Data.EntityConfig
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.JogadorId).IsRequired();
 
-            builder.HasOne(x => x.Jogador);
+            builder.HasOne(x => x.Jogador).WithMany(p => p.HistoricosStatus).HasForeignKey(x => x.JogadorId);
 
             builder.Property(x => x.DataAlteracao).HasColumnType("DateTime");
             builder.Property(x => x.DataCadastro).HasColumnType("DateTime");
