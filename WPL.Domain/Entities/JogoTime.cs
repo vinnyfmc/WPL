@@ -20,12 +20,12 @@ namespace WPL.Domain.Entities
         public StatusEnum Confirmado { get; set; }
 
         public long JogoId { get; set; }
-        public Jogo Jogo { get; set; }
+        public virtual Jogo Jogo { get; set; }
         public long TimeId { get; set; }
-        public Time Time { get; set; }
+        public virtual Time Time { get; set; }
 
-        public IEnumerable<Jogo> JogosTimeCasa { get; set; }
-        public IEnumerable<Jogo> JogosTimeFora { get; set; }
+        public virtual ICollection<Jogo> JogosTimeCasa { get; set; }
+        public virtual ICollection<Jogo> JogosTimeFora { get; set; }
 
         public JogoTime(
             long idJogador,

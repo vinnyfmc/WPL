@@ -13,7 +13,7 @@ namespace WPL.Domain.Entities
 
         public string Senha { get; set; }
 
-        public IEnumerable<Jogador> Jogadores { get; set; }
+        public virtual ICollection<Jogador> Jogadores { get; set; }
 
         public JogadorSenha(
             long idJogador,

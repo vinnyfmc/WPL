@@ -16,14 +16,14 @@ namespace WPL.Domain.Entities
         public JogoStatusEnum Status { get; set; }
 
         public long CampeonatoEdicaoFaseId { get; set; }
-        public CampeonatoEdicaoFase CampeonatoEdicaoFase { get; set; }
+        public virtual CampeonatoEdicaoFase CampeonatoEdicaoFase { get; set; }
         public long TimeCasaId { get; set; }
-        public JogoTime TimeCasa { get; set; }
+        public virtual JogoTime TimeCasa { get; set; }
         public long TimeForaId { get; set; }
-        public JogoTime TimeFora { get; set; }
+        public virtual JogoTime TimeFora { get; set; }
 
-        public IEnumerable<JogoJogador> JogoJogadores { get; set; }
-        public IEnumerable<JogoTime> JogoTimes { get; set; }
+        public virtual ICollection<JogoJogador> JogoJogadores { get; set; }
+        public virtual ICollection<JogoTime> JogoTimes { get; set; }
 
         public Jogo(
             long idJogador,

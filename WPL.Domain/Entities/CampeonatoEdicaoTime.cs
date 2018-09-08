@@ -10,9 +10,9 @@
         public StatusEnum Status { get; set; }
 
         public long CampeonatoEdicaoId { get; set; }
-        public CampeonatoEdicao CampeonatoEdicao { get; set; }
+        public virtual CampeonatoEdicao CampeonatoEdicao { get; set; }
         public long TimeId { get; set; }
-        public Time Time { get; set; }
+        public virtual Time Time { get; set; }
 
         public CampeonatoEdicaoTime(
             long idJogador,

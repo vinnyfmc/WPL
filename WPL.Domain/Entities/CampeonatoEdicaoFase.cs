@@ -13,9 +13,9 @@ namespace WPL.Domain.Entities
         public StatusEnum Status { get; set; }
 
         public long CampeonatoEdicaoId { get; set; }
-        public CampeonatoEdicao CampeonatoEdicao { get; set; }
+        public virtual CampeonatoEdicao CampeonatoEdicao { get; set; }
 
-        public IEnumerable<Jogo> Jogos { get; set; }
+        public virtual ICollection<Jogo> Jogos { get; set; }
 
         public CampeonatoEdicaoFase(
             long idJogador,

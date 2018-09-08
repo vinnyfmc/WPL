@@ -12,11 +12,11 @@
         public StatusEnum Status { get; set; }
 
         public long PosicaoId { get; set; }
-        public Posicao PosicaoDefault { get; set; }
+        public virtual Posicao PosicaoDefault { get; set; }
         public long JogadorId { get; set; }
-        public Jogador Jogador { get; set; }
+        public virtual Jogador Jogador { get; set; }
         public long TimeId { get; set; }
-        public Time Time { get; set; }
+        public virtual Time Time { get; set; }
         
         public TimeJogador(
             long idJogador,

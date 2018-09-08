@@ -16,8 +16,8 @@ namespace WPL.Domain.Entities
         public StatusEnum Status { get; set; }
         public CampeonatoTipoEnum TipoSugestao { get; set; }
 
-        public IEnumerable<CampeonatoPlataforma> Plataformas { get; set; }
-        public IEnumerable<CampeonatoEdicao> Edicoes { get; set; }
+        public virtual ICollection<CampeonatoPlataforma> Plataformas { get; set; }
+        public virtual ICollection<CampeonatoEdicao> Edicoes { get; set; }
 
         public Campeonato(
             long idJogador,

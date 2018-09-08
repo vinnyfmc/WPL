@@ -20,15 +20,15 @@ namespace WPL.Domain.Entities
         public string CEP { get; set; }
 
         public long JogadorSenhaId { get; set; }
-        public JogadorSenha JogadorSenha { get; set; }
+        public virtual JogadorSenha JogadorSenha { get; set; }
         public long PlataformaId { get; set; }
-        public Plataforma Plataforma { get; set; }
+        public virtual Plataforma Plataforma { get; set; }
         public long PosicaoId { get; set; }
-        public Posicao PosicaoPreferida { get; set; }
+        public virtual Posicao PosicaoPreferida { get; set; }
 
-        public ICollection<JogadorStatusHistorico> HistoricosStatus { get; set; }
-        public ICollection<JogoJogador> JogosJogador { get; set; }
-        public ICollection<TimeJogador> TimesJogador { get; set; }
+        public virtual ICollection<JogadorStatusHistorico> HistoricosStatus { get; set; }
+        public virtual ICollection<JogoJogador> JogosJogador { get; set; }
+        public virtual ICollection<TimeJogador> TimesJogador { get; set; }
 
         public Jogador(
             long idJogador,

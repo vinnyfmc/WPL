@@ -40,6 +40,7 @@ namespace WPL.Web
                 options.UseMySql(
                     Configuration.GetConnectionString("MySqlConnectionString")
                 )
+                .UseLazyLoadingProxies()
             );
 
             services.AddScoped(typeof(ICampeonatoAppService), typeof(CampeonatoAppService));

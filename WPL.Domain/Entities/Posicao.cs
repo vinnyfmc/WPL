@@ -14,9 +14,9 @@ namespace WPL.Domain.Entities
         public string Logo { get; set; }
         public StatusEnum Status { get; set; }
 
-        public IEnumerable<Jogador> Jogadores { get; set; }
-        public IEnumerable<JogoJogador> JogoJogadores { get; set; }
-        public IEnumerable<TimeJogador> TimeJogadores { get; set; }
+        public virtual ICollection<Jogador> Jogadores { get; set; }
+        public virtual ICollection<JogoJogador> JogoJogadores { get; set; }
+        public virtual ICollection<TimeJogador> TimeJogadores { get; set; }
 
         public Posicao(
             long idJogador, 

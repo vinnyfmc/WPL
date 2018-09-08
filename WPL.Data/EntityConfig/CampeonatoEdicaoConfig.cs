@@ -23,7 +23,7 @@ namespace WPL.Data.EntityConfig
             builder.Property(x => x.Tipo).IsRequired();
             builder.Property(x => x.CampeonatoId).IsRequired();
 
-            builder.lHasForeignKey(x => x.CampeonatoId);
+            builder.HasOne(x => x.Campeonato).WithMany(p => p.Edicoes).HasForeignKey(x => x.CampeonatoId);
             
             builder.HasMany(x => x.Fases);
             builder.HasMany(x => x.Times);

@@ -15,9 +15,9 @@ namespace WPL.Domain.Entities
         public bool PlataformaDefault { get; set; }
         public StatusEnum Status { get; set; }
 
-        public IEnumerable<CampeonatoPlataforma> Campeonatos { get; set; }
-        public IEnumerable<Jogador> Jogadores { get; set; }
-        public IEnumerable<Time> Times { get; set; }
+        public virtual ICollection<CampeonatoPlataforma> Campeonatos { get; set; }
+        public virtual ICollection<Jogador> Jogadores { get; set; }
+        public virtual ICollection<Time> Times { get; set; }
 
         public Plataforma(
             long idJogador, 

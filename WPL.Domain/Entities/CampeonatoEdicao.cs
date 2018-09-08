@@ -21,10 +21,10 @@ namespace WPL.Domain.Entities
         public CampeonatoTipoEnum Tipo { get; set; }
 
         public long CampeonatoId { get; set; }
-        public Campeonato Campeonato { get; set; }
+        public virtual Campeonato Campeonato { get; set; }
 
-        public IEnumerable<CampeonatoEdicaoFase> Fases { get; set; }
-        public IEnumerable<CampeonatoEdicaoTime> Times { get; set; }
+        public virtual ICollection<CampeonatoEdicaoFase> Fases { get; set; }
+        public virtual ICollection<CampeonatoEdicaoTime> Times { get; set; }
 
         public CampeonatoEdicao(
             long idJogador,

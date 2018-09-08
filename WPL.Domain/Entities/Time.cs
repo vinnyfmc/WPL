@@ -18,11 +18,11 @@ namespace WPL.Domain.Entities
         public TimeStatusEnum Status { get; set; }
 
         public long PlataformaId { get; set; }
-        public Plataforma Plataforma { get; set; }
-
-        public IEnumerable<CampeonatoEdicaoTime> CampeonatoEdicoes { get; set; }
-        public IEnumerable<JogoTime> JogosTime { get; set; }
-        public IEnumerable<TimeJogador> TimeJogadores { get; set; }
+        public virtual Plataforma Plataforma { get; set; }
+               
+        public virtual ICollection<CampeonatoEdicaoTime> CampeonatoEdicoes { get; set; }
+        public virtual ICollection<JogoTime> JogosTime { get; set; }
+        public virtual ICollection<TimeJogador> TimeJogadores { get; set; }
 
         public Time(
             long idJogador,

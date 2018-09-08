@@ -14,9 +14,9 @@ namespace WPL.Domain.Entities
         public StatusEnum Status { get; set; }
 
         public long CampeonatoId { get; set; }
-        public Campeonato Campeonato { get; set; }
+        public virtual Campeonato Campeonato { get; set; }
         public long PlataformaId { get; set; }
-        public Plataforma Plataforma { get; set; }
+        public virtual Plataforma Plataforma { get; set; }
 
         public CampeonatoPlataforma(
             long idJogador,
