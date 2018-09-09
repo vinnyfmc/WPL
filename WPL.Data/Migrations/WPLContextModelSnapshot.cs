@@ -51,11 +51,15 @@ namespace WPL.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(10)");
 
+                    b.Property<long>("PlataformaId");
+
                     b.Property<int>("Status");
 
                     b.Property<int>("TipoSugestao");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PlataformaId");
 
                     b.ToTable("Campeonato");
                 });
@@ -183,41 +187,6 @@ namespace WPL.Data.Migrations
                     b.HasIndex("TimeId");
 
                     b.ToTable("CampeonatoEdicaoTime");
-                });
-
-            modelBuilder.Entity("WPL.Domain.Entities.CampeonatoPlataforma", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<long>("CampeonatoId");
-
-                    b.Property<DateTime?>("DataAlteracao")
-                        .HasColumnType("DateTime");
-
-                    b.Property<DateTime?>("DataCadastro")
-                        .HasColumnType("DateTime");
-
-                    b.Property<DateTime?>("DataExclusao")
-                        .HasColumnType("DateTime");
-
-                    b.Property<long?>("IdJogadorAlteracao");
-
-                    b.Property<long?>("IdJogadorCadastro");
-
-                    b.Property<long?>("IdJogadorExclusao");
-
-                    b.Property<long>("PlataformaId");
-
-                    b.Property<int>("Status");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CampeonatoId");
-
-                    b.HasIndex("PlataformaId");
-
-                    b.ToTable("CampeonatoPlataforma");
                 });
 
             modelBuilder.Entity("WPL.Domain.Entities.Jogador", b =>
@@ -658,6 +627,14 @@ namespace WPL.Data.Migrations
                     b.ToTable("TimeJogador");
                 });
 
+            modelBuilder.Entity("WPL.Domain.Entities.Campeonato", b =>
+                {
+                    b.HasOne("WPL.Domain.Entities.Plataforma", "Plataforma")
+                        .WithMany("Campeonatos")
+                        .HasForeignKey("PlataformaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("WPL.Domain.Entities.CampeonatoEdicao", b =>
                 {
                     b.HasOne("WPL.Domain.Entities.Campeonato", "Campeonato")
@@ -684,19 +661,6 @@ namespace WPL.Data.Migrations
                     b.HasOne("WPL.Domain.Entities.Time", "Time")
                         .WithMany("CampeonatoEdicoes")
                         .HasForeignKey("TimeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("WPL.Domain.Entities.CampeonatoPlataforma", b =>
-                {
-                    b.HasOne("WPL.Domain.Entities.Campeonato", "Campeonato")
-                        .WithMany("Plataformas")
-                        .HasForeignKey("CampeonatoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("WPL.Domain.Entities.Plataforma", "Plataforma")
-                        .WithMany("Campeonatos")
-                        .HasForeignKey("PlataformaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

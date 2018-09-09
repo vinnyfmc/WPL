@@ -24,6 +24,13 @@ namespace WPL.Application.Services
 
         public IEnumerable<CampeonatoEdicaoModel> GetUltimaEdicaoPorPlataformas()
         {
+            
+
+
+
+
+
+
             List<CampeonatoEdicaoModel> campeonatoEdicaoModel = new List<CampeonatoEdicaoModel>();
             IEnumerable<Plataforma> plataformas;
             plataformas = plataformaRepository.GetAll().Where(x => x.Status == StatusEnum.Ativo);

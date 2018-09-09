@@ -9,30 +9,6 @@ namespace WPL.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Campeonato",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    DataCadastro = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorCadastro = table.Column<long>(nullable: true),
-                    DataAlteracao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorAlteracao = table.Column<long>(nullable: true),
-                    DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorExclusao = table.Column<long>(nullable: true),
-                    Nome = table.Column<string>(type: "varchar(200)", nullable: false),
-                    NomeAbreviado = table.Column<string>(type: "varchar(10)", nullable: false),
-                    ImagemLogo = table.Column<string>(type: "varchar(300)", nullable: true),
-                    ImagemRegulamentoSugestao = table.Column<string>(type: "varchar(300)", nullable: true),
-                    Status = table.Column<int>(nullable: false),
-                    TipoSugestao = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Campeonato", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "JogadorSenha",
                 columns: table => new
                 {
@@ -97,7 +73,7 @@ namespace WPL.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CampeonatoEdicao",
+                name: "Campeonato",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
@@ -109,54 +85,18 @@ namespace WPL.Data.Migrations
                     DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
                     IdJogadorExclusao = table.Column<long>(nullable: true),
                     Nome = table.Column<string>(type: "varchar(200)", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "DateTime", nullable: false),
-                    DataFim = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    NomeAbreviado = table.Column<string>(type: "varchar(10)", nullable: false),
                     ImagemLogo = table.Column<string>(type: "varchar(300)", nullable: true),
-                    ImagemBanner = table.Column<string>(type: "varchar(300)", nullable: true),
-                    ImagemPremiacao = table.Column<string>(type: "varchar(300)", nullable: true),
-                    ImagemRegulamento = table.Column<string>(type: "varchar(300)", nullable: true),
+                    ImagemRegulamentoSugestao = table.Column<string>(type: "varchar(300)", nullable: true),
                     Status = table.Column<int>(nullable: false),
-                    Tipo = table.Column<int>(nullable: false),
-                    CampeonatoId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CampeonatoEdicao", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CampeonatoEdicao_Campeonato_CampeonatoId",
-                        column: x => x.CampeonatoId,
-                        principalTable: "Campeonato",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CampeonatoPlataforma",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    DataCadastro = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorCadastro = table.Column<long>(nullable: true),
-                    DataAlteracao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorAlteracao = table.Column<long>(nullable: true),
-                    DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorExclusao = table.Column<long>(nullable: true),
-                    Status = table.Column<int>(nullable: false),
-                    CampeonatoId = table.Column<long>(nullable: false),
+                    TipoSugestao = table.Column<int>(nullable: false),
                     PlataformaId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CampeonatoPlataforma", x => x.Id);
+                    table.PrimaryKey("PK_Campeonato", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CampeonatoPlataforma_Campeonato_CampeonatoId",
-                        column: x => x.CampeonatoId,
-                        principalTable: "Campeonato",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CampeonatoPlataforma_Plataforma_PlataformaId",
+                        name: "FK_Campeonato_Plataforma_PlataformaId",
                         column: x => x.PlataformaId,
                         principalTable: "Plataforma",
                         principalColumn: "Id",
@@ -239,7 +179,7 @@ namespace WPL.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CampeonatoEdicaoFase",
+                name: "CampeonatoEdicao",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
@@ -251,49 +191,23 @@ namespace WPL.Data.Migrations
                     DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
                     IdJogadorExclusao = table.Column<long>(nullable: true),
                     Nome = table.Column<string>(type: "varchar(200)", nullable: false),
+                    DataInicio = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    DataFim = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    ImagemLogo = table.Column<string>(type: "varchar(300)", nullable: true),
+                    ImagemBanner = table.Column<string>(type: "varchar(300)", nullable: true),
+                    ImagemPremiacao = table.Column<string>(type: "varchar(300)", nullable: true),
+                    ImagemRegulamento = table.Column<string>(type: "varchar(300)", nullable: true),
                     Status = table.Column<int>(nullable: false),
-                    CampeonatoEdicaoId = table.Column<long>(nullable: false)
+                    Tipo = table.Column<int>(nullable: false),
+                    CampeonatoId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CampeonatoEdicaoFase", x => x.Id);
+                    table.PrimaryKey("PK_CampeonatoEdicao", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CampeonatoEdicaoFase_CampeonatoEdicao_CampeonatoEdicaoId",
-                        column: x => x.CampeonatoEdicaoId,
-                        principalTable: "CampeonatoEdicao",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CampeonatoEdicaoTime",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    DataCadastro = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorCadastro = table.Column<long>(nullable: true),
-                    DataAlteracao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorAlteracao = table.Column<long>(nullable: true),
-                    DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
-                    IdJogadorExclusao = table.Column<long>(nullable: true),
-                    Status = table.Column<int>(nullable: false),
-                    CampeonatoEdicaoId = table.Column<long>(nullable: false),
-                    TimeId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CampeonatoEdicaoTime", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CampeonatoEdicaoTime_CampeonatoEdicao_CampeonatoEdicaoId",
-                        column: x => x.CampeonatoEdicaoId,
-                        principalTable: "CampeonatoEdicao",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CampeonatoEdicaoTime_Time_TimeId",
-                        column: x => x.TimeId,
-                        principalTable: "Time",
+                        name: "FK_CampeonatoEdicao_Campeonato_CampeonatoId",
+                        column: x => x.CampeonatoId,
+                        principalTable: "Campeonato",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -360,6 +274,66 @@ namespace WPL.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TimeJogador_Time_TimeId",
+                        column: x => x.TimeId,
+                        principalTable: "Time",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CampeonatoEdicaoFase",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DataCadastro = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorCadastro = table.Column<long>(nullable: true),
+                    DataAlteracao = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorAlteracao = table.Column<long>(nullable: true),
+                    DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorExclusao = table.Column<long>(nullable: true),
+                    Nome = table.Column<string>(type: "varchar(200)", nullable: false),
+                    Status = table.Column<int>(nullable: false),
+                    CampeonatoEdicaoId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CampeonatoEdicaoFase", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CampeonatoEdicaoFase_CampeonatoEdicao_CampeonatoEdicaoId",
+                        column: x => x.CampeonatoEdicaoId,
+                        principalTable: "CampeonatoEdicao",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CampeonatoEdicaoTime",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DataCadastro = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorCadastro = table.Column<long>(nullable: true),
+                    DataAlteracao = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorAlteracao = table.Column<long>(nullable: true),
+                    DataExclusao = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    IdJogadorExclusao = table.Column<long>(nullable: true),
+                    Status = table.Column<int>(nullable: false),
+                    CampeonatoEdicaoId = table.Column<long>(nullable: false),
+                    TimeId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CampeonatoEdicaoTime", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CampeonatoEdicaoTime_CampeonatoEdicao_CampeonatoEdicaoId",
+                        column: x => x.CampeonatoEdicaoId,
+                        principalTable: "CampeonatoEdicao",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CampeonatoEdicaoTime_Time_TimeId",
                         column: x => x.TimeId,
                         principalTable: "Time",
                         principalColumn: "Id",
@@ -482,6 +456,11 @@ namespace WPL.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Campeonato_PlataformaId",
+                table: "Campeonato",
+                column: "PlataformaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CampeonatoEdicao_CampeonatoId",
                 table: "CampeonatoEdicao",
                 column: "CampeonatoId");
@@ -500,16 +479,6 @@ namespace WPL.Data.Migrations
                 name: "IX_CampeonatoEdicaoTime_TimeId",
                 table: "CampeonatoEdicaoTime",
                 column: "TimeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CampeonatoPlataforma_CampeonatoId",
-                table: "CampeonatoPlataforma",
-                column: "CampeonatoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CampeonatoPlataforma_PlataformaId",
-                table: "CampeonatoPlataforma",
-                column: "PlataformaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Jogador_JogadorSenhaId",
@@ -611,6 +580,14 @@ namespace WPL.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
+                name: "FK_Campeonato_Plataforma_PlataformaId",
+                table: "Campeonato");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Time_Plataforma_PlataformaId",
+                table: "Time");
+
+            migrationBuilder.DropForeignKey(
                 name: "FK_CampeonatoEdicao_Campeonato_CampeonatoId",
                 table: "CampeonatoEdicao");
 
@@ -638,9 +615,6 @@ namespace WPL.Data.Migrations
                 name: "CampeonatoEdicaoTime");
 
             migrationBuilder.DropTable(
-                name: "CampeonatoPlataforma");
-
-            migrationBuilder.DropTable(
                 name: "JogadorStatusHistorico");
 
             migrationBuilder.DropTable(
@@ -659,6 +633,9 @@ namespace WPL.Data.Migrations
                 name: "Posicao");
 
             migrationBuilder.DropTable(
+                name: "Plataforma");
+
+            migrationBuilder.DropTable(
                 name: "Campeonato");
 
             migrationBuilder.DropTable(
@@ -666,9 +643,6 @@ namespace WPL.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Time");
-
-            migrationBuilder.DropTable(
-                name: "Plataforma");
 
             migrationBuilder.DropTable(
                 name: "CampeonatoEdicaoFase");

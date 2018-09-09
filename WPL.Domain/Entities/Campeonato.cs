@@ -16,7 +16,9 @@ namespace WPL.Domain.Entities
         public StatusEnum Status { get; set; }
         public CampeonatoTipoEnum TipoSugestao { get; set; }
 
-        public virtual ICollection<CampeonatoPlataforma> Plataformas { get; set; }
+        public long PlataformaId { get; set; }
+        public virtual Plataforma Plataforma { get; set; }
+
         public virtual ICollection<CampeonatoEdicao> Edicoes { get; set; }
 
         public Campeonato(

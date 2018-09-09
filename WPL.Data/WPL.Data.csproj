@@ -9,6 +9,7 @@
     <Compile Remove="Migrations\20180907210034_CorrigindoRelacionamentos.cs" />
     <Compile Remove="Migrations\20180907210243_InitialCreate.cs" />
     <Compile Remove="Migrations\20180908120333_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180908123128_InitialCreate.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +19,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WPL.Domain\WPL.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

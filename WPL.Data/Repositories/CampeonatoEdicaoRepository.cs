@@ -20,8 +20,7 @@ namespace WPL.Data.Repositories
 
             var query = (from a in ctx.CampeonatoEdicao
                          join b in ctx.Campeonato on a.CampeonatoId equals b.Id
-                         join c in ctx.CampeonatoPlataforma on b.Id equals c.CampeonatoId
-                         where c.PlataformaId == idPlataforma && a.DataExclusao == null && a.Status == CampeonatoStatusEnum.AguardandoInicio && b.Status == StatusEnum.Ativo
+                         where b.PlataformaId == idPlataforma && a.DataExclusao == null && a.Status == CampeonatoStatusEnum.AguardandoInicio && b.Status == StatusEnum.Ativo
                          select a
                          ).ToList();
 

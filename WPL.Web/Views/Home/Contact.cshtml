@@ -1,17 +1,72 @@
 ﻿@{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contato";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<!-- Breadcrumbs Section Start -->
+<div class="rs-breadcrumbs sec-color">
+    <img src="~/images/breadcrumbs/about.jpg" alt="Breadcrubs" />
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">Contato</h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="~/">Home</a>
+                        </li>
+                        <li>Contato</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumbs Section End -->
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="contact-page-section sec-spacer">
+    <div class="container">
+        <div class="contact-comment-section">
+            <h3>Formulário para contato</h3>
+            <div id="form-message"></div>
+            <form id="contact-form" method="post" action="mailer.php">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Nome Completo*</label>
+                                <input name="fname" id="fname" class="form-control" type="text" maxlength="200">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Email*</label>
+                                <input name="email" id="email" class="form-control" type="email" maxlength="100">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Assunto *</label>
+                                <input name="subject" id="subject" class="form-control" type="text" maxlength="60">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Mensagem *</label>
+                                <textarea cols="40" rows="10" id="message" name="message" class="textarea form-control" maxlength="300" placeholder="Digite aqui sua mensagem com no máximo 300 caracteres"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group mb-0">
+                                <input class="btn-send" type="submit" value="Enviar">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -20,12 +20,9 @@ namespace WPL.Application.Transformation
                 campeonatoEdicao.ImagemPremiacao,
                 campeonatoEdicao.ImagemRegulamento,
                 campeonatoEdicao.Tipo,
-                //campeonatoEdicao.Campeonato.Plataforma.Logo,
-                //campeonatoEdicao.Campeonato.Plataforma.NomeAbreviado,
-                //campeonatoEdicao.Campeonato.Plataforma.PlataformaDefault
-                null,
-                null,
-                true
+                campeonatoEdicao.Campeonato.Plataforma.ImagemLogo,
+                campeonatoEdicao.Campeonato.Plataforma.NomeAbreviado,
+                campeonatoEdicao.Campeonato.Plataforma.PlataformaDefault
                 );
         }
 

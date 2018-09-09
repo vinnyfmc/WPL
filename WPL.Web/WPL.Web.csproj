@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\campeonatoedicao\NewFolder\**" />
+    <Compile Remove="wwwroot\images\edicao\**" />
+    <Content Remove="wwwroot\images\campeonatoedicao\NewFolder\**" />
+    <Content Remove="wwwroot\images\edicao\**" />
+    <EmbeddedResource Remove="wwwroot\images\campeonatoedicao\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\images\edicao\**" />
+    <None Remove="wwwroot\images\campeonatoedicao\NewFolder\**" />
+    <None Remove="wwwroot\images\edicao\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.2" />
@@ -22,7 +33,9 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\images\edicao\banner\" />
+    <Folder Include="wwwroot\images\campeonatoedicao\Premio\" />
+    <Folder Include="wwwroot\images\campeonatoedicao\regulamento\" />
+    <Folder Include="wwwroot\images\wpl\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
