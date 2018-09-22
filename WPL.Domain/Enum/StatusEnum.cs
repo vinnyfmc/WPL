@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace WPL.Domain
+namespace WPL.MongoDB.Domain
 {
     public enum StatusEnum
     {

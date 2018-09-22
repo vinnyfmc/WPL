@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPL.Data", "WPL.Data\WPL.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPL.Application", "WPL.Application\WPL.Application.csproj", "{C56D5894-9F53-4D28-8731-1658D7CECF3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPL.Web", "WPL.Web\WPL.Web.csproj", "{C73000EF-42B3-4986-AF4C-716C50DC92EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPL.Web", "WPL.Web\WPL.Web.csproj", "{C73000EF-42B3-4986-AF4C-716C50DC92EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPL.MongoDB.Domain", "WPL.MongoDB.Domain\WPL.MongoDB.Domain.csproj", "{56BFE784-AC77-44A0-8395-535E598337F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C73000EF-42B3-4986-AF4C-716C50DC92EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C73000EF-42B3-4986-AF4C-716C50DC92EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C73000EF-42B3-4986-AF4C-716C50DC92EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56BFE784-AC77-44A0-8395-535E598337F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BFE784-AC77-44A0-8395-535E598337F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BFE784-AC77-44A0-8395-535E598337F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BFE784-AC77-44A0-8395-535E598337F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
